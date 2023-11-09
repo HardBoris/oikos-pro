@@ -6,11 +6,9 @@ import { thingRepository } from "../repositories";
 class ThingService {
   ThingCreator = async (req: Request): Promise<any> => {
     const body = req.body;
-    const fecha = new Date(body.elementDate);
 
     const thing: Thing = await thingRepository.save({
       ...body,
-      elementDate: fecha,
     });
 
     return thing;
