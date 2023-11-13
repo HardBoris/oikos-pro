@@ -6,12 +6,18 @@ import { thingRepository } from "../repositories";
 class ThingService {
   ThingCreator = async (req: Request): Promise<any> => {
     const body = req.body;
+    const { thing } = body;
+    const buscado = await thingRepository.findOne({ thing: thing });
 
-    const thing: Thing = await thingRepository.save({
-      ...body,
-    });
+    if (buscado) {
+      return buscado;
+    } else {
+      const cosa: Thing = await thingRepository.save({
+        ...body,
+      });
 
-    return thing;
+      return cosa;
+    }
   };
 
   ThingsLoader = async (req: Request) => {
@@ -38,6 +44,7 @@ class ThingService {
     });
     const thingUpdated = {
       ...thing,
+      thing: req.body.thing,
     };
     await thingRepository.save(thingUpdated);
     return {

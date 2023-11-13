@@ -14,19 +14,19 @@ ThingRouter.get(
   thingController.ThingsLoader
 );
 ThingRouter.get(
-  "/oikos-pro-api/things/:ThingId",
+  "/oikos-pro-api/things/:thingId",
   // "/oikos-pro-api/:companyId/things/:ThingId",
   thingController.ThingLoader
 );
 
 ThingRouter.patch(
-  "/oikos-pro-api/things/:ThingId",
+  "/oikos-pro-api/things/:thingId",
   // "/oikos-pro-api/:companyId/things/:ThingId",
   thingController.ThingEditor
 );
 
 ThingRouter.delete(
-  "/oikos-pro-api/things/:ThingId",
+  "/oikos-pro-api/things/:thingId",
   // "/oikos-pro-api/:companyId/things/:ThingId",
   thingController.ThingDeletor
 );
