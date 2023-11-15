@@ -1,3 +1,4 @@
-import thingController from "./Thing.controller";
+import elementController from "./Element.controller";
+import stuffController from "./Stuff.controller";
 
-export { thingController };
+export { elementController, stuffController };
