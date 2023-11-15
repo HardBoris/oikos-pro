@@ -1,3 +1,3 @@
-import { Thing } from "./Thing";
+import { Element } from "./Element";
 
-export { Thing };
+export { Element };
