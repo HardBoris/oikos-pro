@@ -6,8 +6,9 @@ import { stuffRepository } from "../repositories";
 class StuffService {
   StuffCreator = async (req: Request): Promise<any> => {
     const body = req.body;
-    const { stuff } = body;
-    const buscado = await stuffRepository.findOne({ stuff: stuff });
+    console.log(body);
+    const { element } = body;
+    const buscado = await stuffRepository.findOne({ element: element });
 
     if (buscado) {
       return buscado;
