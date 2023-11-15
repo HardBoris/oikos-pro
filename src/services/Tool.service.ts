@@ -6,7 +6,6 @@ import { ToolRepository } from "../repositories";
 class ToolService {
   ToolCreator = async (req: Request): Promise<any> => {
     const body = req.body;
-    console.log(body);
     const { element } = body;
     const buscado = await ToolRepository.findOne({ element: element });
 

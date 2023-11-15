@@ -6,7 +6,6 @@ import { MidiaRepository } from "../repositories";
 class MidiaService {
   MidiaCreator = async (req: Request): Promise<any> => {
     const body = req.body;
-    console.log(body);
     const { element } = body;
     const buscado = await MidiaRepository.findOne({ element: element });
 
