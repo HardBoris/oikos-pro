@@ -1,4 +1,5 @@
-import elementService from "./Element.service";
-import stuffService from "./Stuff.service";
+import ElementService from "./Element.service";
+import StuffService from "./Stuff.service";
+import MidiaService from "./Midia.service";
 
-export { elementService, stuffService };
+export { ElementService, StuffService, MidiaService };

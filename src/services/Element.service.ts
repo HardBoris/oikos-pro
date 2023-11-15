@@ -1,18 +1,18 @@
 import { Request } from "express";
 import { Element } from "../entities";
 import { ErrorHandler } from "../errors";
-import { elementRepository } from "../repositories";
+import { ElementRepository } from "../repositories";
 
 class ElementService {
   ElementCreator = async (req: Request): Promise<any> => {
     const body = req.body;
     const { element } = body;
-    const buscado = await elementRepository.findOne({ element: element });
+    const buscado = await ElementRepository.findOne({ element: element });
 
     if (buscado) {
       return buscado;
     } else {
-      const cosa: Element = await elementRepository.save({
+      const cosa: Element = await ElementRepository.save({
         ...body,
       });
 
@@ -21,7 +21,7 @@ class ElementService {
   };
 
   ElementsLoader = async (req: Request) => {
-    let elements: Element[] = await elementRepository.all();
+    let elements: Element[] = await ElementRepository.all();
     /* elements = elements.sort((a, b) =>
       a.elementId > b.elementId ? -1 : a.elementId < b.elementId ? 1 : 0
     ); */
@@ -32,21 +32,21 @@ class ElementService {
   };
 
   ElementLoader = async (req: Request) => {
-    const element: Element = await elementRepository.findOne({
+    const element: Element = await ElementRepository.findOne({
       elementId: req.params.elementId,
     });
     return { status: 200, element: element };
   };
 
   ElementEditor = async (req: Request) => {
-    const element: Element = await elementRepository.findOne({
+    const element: Element = await ElementRepository.findOne({
       elementId: req.params.elementId,
     });
     const elementUpdated = {
       ...element,
       element: req.body.element,
     };
-    await elementRepository.save(elementUpdated);
+    await ElementRepository.save(elementUpdated);
     return {
       status: 200,
       element: elementUpdated,
@@ -54,7 +54,7 @@ class ElementService {
   };
 
   ElementDeletor = async (req: Request) => {
-    const element: Element = await elementRepository.findOne({
+    const element: Element = await ElementRepository.findOne({
       elementId: req.params.elementId,
     });
 
@@ -62,7 +62,7 @@ class ElementService {
       throw new ErrorHandler(404, "Element not found");
     }
 
-    await elementRepository.delete(req.params.elementId);
+    await ElementRepository.delete(req.params.elementId);
 
     return {
       status: 200,

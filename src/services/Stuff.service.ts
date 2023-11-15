@@ -1,19 +1,19 @@
 import { Request } from "express";
 import { Stuff } from "../entities/Element";
 import { ErrorHandler } from "../errors";
-import { stuffRepository } from "../repositories";
+import { StuffRepository } from "../repositories";
 
 class StuffService {
   StuffCreator = async (req: Request): Promise<any> => {
     const body = req.body;
     console.log(body);
     const { element } = body;
-    const buscado = await stuffRepository.findOne({ element: element });
+    const buscado = await StuffRepository.findOne({ element: element });
 
     if (buscado) {
       return buscado;
     } else {
-      const cosa: Stuff = await stuffRepository.save({
+      const cosa: Stuff = await StuffRepository.save({
         ...body,
       });
 
@@ -22,7 +22,7 @@ class StuffService {
   };
 
   StuffsLoader = async (req: Request) => {
-    let stuffs: Stuff[] = await stuffRepository.all();
+    let stuffs: Stuff[] = await StuffRepository.all();
     /* stuffs = stuffs.sort((a, b) =>
       a.stuffId > b.stuffId ? -1 : a.stuffId < b.stuffId ? 1 : 0
     ); */
@@ -33,7 +33,7 @@ class StuffService {
   };
 
   /* StuffsClassified = async (req: Request) => {
-    const clasificados: Stuff[] = await stuffRepository.classified({
+    const clasificados: Stuff[] = await StuffRepository.classified({
       type: req.params.tipo,
     });
     return {
@@ -43,21 +43,21 @@ class StuffService {
   }; */
 
   StuffLoader = async (req: Request) => {
-    const stuff: Stuff = await stuffRepository.findOne({
+    const stuff: Stuff = await StuffRepository.findOne({
       stuffId: req.params.stuffId,
     });
     return { status: 200, stuff: stuff };
   };
 
   StuffEditor = async (req: Request) => {
-    const stuff: Stuff = await stuffRepository.findOne({
+    const stuff: Stuff = await StuffRepository.findOne({
       stuffId: req.params.stuffId,
     });
     const stuffUpdated = {
       ...stuff,
       stuff: req.body.stuff,
     };
-    await stuffRepository.save(stuffUpdated);
+    await StuffRepository.save(stuffUpdated);
     return {
       status: 200,
       stuff: stuffUpdated,
@@ -65,7 +65,7 @@ class StuffService {
   };
 
   StuffDeletor = async (req: Request) => {
-    const stuff: Stuff = await stuffRepository.findOne({
+    const stuff: Stuff = await StuffRepository.findOne({
       stuffId: req.params.stuffId,
     });
 
@@ -73,7 +73,7 @@ class StuffService {
       throw new ErrorHandler(404, "Stuff not found");
     }
 
-    await stuffRepository.delete(req.params.stuffId);
+    await StuffRepository.delete(req.params.stuffId);
 
     return {
       status: 200,
