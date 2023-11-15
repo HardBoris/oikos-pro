@@ -1,3 +1,4 @@
-import thingRepository from "./Thing.repository";
+import elementRepository from "./Element.repository";
+import stuffRepository from "./Stuff.repository";
 
-export { thingRepository };
+export { elementRepository, stuffRepository };
