@@ -1,34 +1,34 @@
 import { Router } from "express";
-import { stuffController } from "../controllers";
+import { StuffController } from "../controllers";
 
 const StuffRouter = Router();
 
 StuffRouter.post(
   "/oikos-pro-api/stuffs/register",
   // "/oikos-pro-api/:companyId/stuffs/register",
-  stuffController.StuffCreator
+  StuffController.StuffCreator
 );
 StuffRouter.get(
   "/oikos-pro-api/stuffs",
   // "/oikos-pro-api/:companyId/stuffs",
-  stuffController.StuffsLoader
+  StuffController.StuffsLoader
 );
 StuffRouter.get(
   "/oikos-pro-api/stuffs/:stuffId",
   // "/oikos-pro-api/:companyId/stuffs/:StuffId",
-  stuffController.StuffLoader
+  StuffController.StuffLoader
 );
 
 StuffRouter.patch(
   "/oikos-pro-api/stuffs/:stuffId",
   // "/oikos-pro-api/:companyId/stuffs/:StuffId",
-  stuffController.StuffEditor
+  StuffController.StuffEditor
 );
 
 StuffRouter.delete(
   "/oikos-pro-api/stuffs/:stuffId",
   // "/oikos-pro-api/:companyId/stuffs/:StuffId",
-  stuffController.StuffDeletor
+  StuffController.StuffDeletor
 );
 
 export default StuffRouter;

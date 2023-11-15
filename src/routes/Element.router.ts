@@ -1,34 +1,34 @@
 import { Router } from "express";
-import { elementController } from "../controllers";
+import { ElementController } from "../controllers";
 
 const ElementRouter = Router();
 
 ElementRouter.post(
   "/oikos-pro-api/elements/register",
   // "/oikos-pro-api/:companyId/elements/register",
-  elementController.ElementCreator
+  ElementController.ElementCreator
 );
 ElementRouter.get(
   "/oikos-pro-api/elements",
   // "/oikos-pro-api/:companyId/elements",
-  elementController.ElementsLoader
+  ElementController.ElementsLoader
 );
 ElementRouter.get(
   "/oikos-pro-api/elements/:elementId",
   // "/oikos-pro-api/:companyId/elements/:ElementId",
-  elementController.ElementLoader
+  ElementController.ElementLoader
 );
 
 ElementRouter.patch(
   "/oikos-pro-api/elements/:elementId",
   // "/oikos-pro-api/:companyId/elements/:ElementId",
-  elementController.ElementEditor
+  ElementController.ElementEditor
 );
 
 ElementRouter.delete(
   "/oikos-pro-api/elements/:elementId",
   // "/oikos-pro-api/:companyId/elements/:ElementId",
-  elementController.ElementDeletor
+  ElementController.ElementDeletor
 );
 
 export default ElementRouter;
