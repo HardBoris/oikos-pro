@@ -30,7 +30,7 @@ class PurchaseRequestService {
     const solicitud: PurchaseRequest = await PurchaseRequestRepository.findOne({
       purchaseRequestId: req.params.solicitudId,
     });
-    return { status: 200, purchaseRequest: solicitud };
+    return { status: 200, solicitud: solicitud };
   };
 
   PurchaseRequestEditor = async (req: Request) => {
@@ -43,7 +43,7 @@ class PurchaseRequestService {
     await PurchaseRequestRepository.save(requestUpdated);
     return {
       status: 200,
-      purchaseRequest: requestUpdated,
+      solicitud: requestUpdated,
     };
   };
 
