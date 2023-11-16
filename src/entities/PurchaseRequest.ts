@@ -1,11 +1,4 @@
-import {
-  CreateDateColumn,
-  Entity,
-  JoinTable,
-  ManyToMany,
-  PrimaryGeneratedColumn,
-} from "typeorm";
-import { Element } from "./Element";
+import { CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("purchase_request")
 export class PurchaseRequest {
@@ -14,8 +7,4 @@ export class PurchaseRequest {
 
   @CreateDateColumn()
   purchaseRequestDate?: Date;
-
-  @ManyToMany(() => Element)
-  @JoinTable()
-  elements: Element[];
 }
