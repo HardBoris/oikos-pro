@@ -6,6 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm";
 import { PurchaseRequest } from "./PurchaseRequest";
+import { Element } from "./Element";
 
 @Entity("details")
 export class Detail {
@@ -21,4 +22,8 @@ export class Detail {
   @ManyToOne(() => PurchaseRequest, (prequest) => prequest.details)
   @JoinColumn({ name: "prequestId" })
   prequest: PurchaseRequest;
+
+  @ManyToOne(() => Element, (element) => element.details)
+  @JoinColumn({ name: "elementId" })
+  element: Element;
 }

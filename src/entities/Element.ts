@@ -4,7 +4,9 @@ import {
   Column,
   TableInheritance,
   ChildEntity,
+  OneToMany,
 } from "typeorm";
+import { Detail } from "./Detail";
 
 @Entity("elements")
 @TableInheritance({ column: { type: "varchar", name: "type" } })
@@ -29,6 +31,9 @@ export class Element {
 
   @Column({ default: 1 })
   idealStock?: number;
+
+  @OneToMany(() => Detail, (detail) => detail.element, { cascade: true })
+  details: Detail[];
 }
 
 @ChildEntity()
