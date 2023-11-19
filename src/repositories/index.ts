@@ -3,6 +3,7 @@ import StuffRepository from "./Stuff.repository";
 import MidiaRepository from "./Midia.repository";
 import ToolRepository from "./Tool.repository";
 import PurchaseRequestRepository from "./PurchaseRequest.repository";
+import OrderRepository from "./Order.repository";
 
 export {
   ElementRepository,
@@ -10,4 +11,5 @@ export {
   MidiaRepository,
   ToolRepository,
   PurchaseRequestRepository,
+  OrderRepository,
 };
