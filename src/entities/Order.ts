@@ -34,6 +34,7 @@ export enum LogisticMode {
 
 @Entity("orders")
 @TableInheritance({ column: { type: "varchar", name: "type" } })
+@Index(["type", "orderId"], { unique: true })
 export class Order {
   @PrimaryGeneratedColumn()
   orderId?: number;
@@ -70,7 +71,7 @@ export class Purchase extends Order {
 }
 
 @ChildEntity()
-export class Service {
+export class Service extends Order {
   @Column()
   description: string;
 }
