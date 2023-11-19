@@ -6,9 +6,11 @@ import { OrderRepository } from "../repositories";
 class OrderService {
   OrderCreator = async (req: Request): Promise<any> => {
     const body = req.body;
+    const cuenta: number = await OrderRepository.counter({ type: body.type });
 
     const order: Order = await OrderRepository.save({
       ...body,
+      order: cuenta + 1,
     });
 
     return order;

@@ -4,6 +4,7 @@ import {
   CreateDateColumn,
   Entity,
   Index,
+  PrimaryColumn,
   PrimaryGeneratedColumn,
   TableInheritance,
   UpdateDateColumn,
@@ -34,16 +35,19 @@ export enum LogisticMode {
 
 @Entity("orders")
 @TableInheritance({ column: { type: "varchar", name: "type" } })
-@Index(["type", "orderId"], { unique: true })
+@Index(["type", "order"], { unique: true })
 export class Order {
-  @PrimaryGeneratedColumn()
-  orderId?: number;
+  @PrimaryGeneratedColumn("uuid")
+  orderId?: string;
 
   @CreateDateColumn()
   orderDate?: Date;
 
   @UpdateDateColumn()
   orderUpdateDate?: Date;
+
+  @Column()
+  order: number;
 
   @Column()
   partner: string;
