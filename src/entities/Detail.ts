@@ -20,10 +20,10 @@ export class Detail {
   measurement: string;
 
   @ManyToOne(() => PurchaseRequest, (prequest) => prequest.details)
-  @JoinColumn({ name: "prequestId" })
+  @JoinColumn({ name: "prequest" })
   prequest: PurchaseRequest;
 
   @ManyToOne(() => Element, (element) => element.details)
-  @JoinColumn({ name: "elementId" })
+  @JoinColumn({ name: "element" })
   element: Element;
 }

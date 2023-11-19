@@ -18,7 +18,7 @@ class PurchaseRequestRepo implements IPurchaseRequestRepo {
 
   save = async (solicitud: Partial<PurchaseRequest>) =>
     await this.ormRepo.save(solicitud);
-  all = async () => await this.ormRepo.find();
+  all = async () => await this.ormRepo.find({ relations: { details: true } });
   findOne = async (payload: object) =>
     await this.ormRepo.findOneBy({ ...payload });
   delete = async (id: string) => await this.ormRepo.delete(id);
