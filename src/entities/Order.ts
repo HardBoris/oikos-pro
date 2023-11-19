@@ -34,7 +34,6 @@ export enum LogisticMode {
 
 @Entity("orders")
 @TableInheritance({ column: { type: "varchar", name: "type" } })
-@Index(["type", "orderId"], { unique: true })
 export class Order {
   @PrimaryGeneratedColumn()
   orderId?: number;
