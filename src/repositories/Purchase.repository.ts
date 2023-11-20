@@ -1,23 +1,24 @@
 import { DeleteResult, Repository } from "typeorm";
 import { AppDataSource } from "../data-source";
-import { Order } from "../entities";
+import { Purchase } from "../entities/Order";
 
-interface IOrderRepo {
-  save: (order: Partial<Order>) => Promise<Order>;
-  all: () => Promise<Order[]>;
-  findOne: (payload: object) => Promise<Order>;
+interface IPurchaseRepo {
+  save: (purchase: Partial<Purchase>) => Promise<Purchase>;
+  all: () => Promise<Purchase[]>;
+  findOne: (payload: object) => Promise<Purchase>;
   delete: (id: string) => Promise<DeleteResult>;
   counter: (payload: object) => Promise<Number>;
 }
 
-class OrderRepo implements IOrderRepo {
-  private ormRepo: Repository<Order>;
+class PurchaseRepo implements IPurchaseRepo {
+  private ormRepo: Repository<Purchase>;
 
   constructor() {
-    this.ormRepo = AppDataSource.getRepository(Order);
+    this.ormRepo = AppDataSource.getRepository(Purchase);
   }
 
-  save = async (order: Partial<Order>) => await this.ormRepo.save(order);
+  save = async (purchase: Partial<Purchase>) =>
+    await this.ormRepo.save(purchase);
   all = async () => await this.ormRepo.find();
   findOne = async (payload: object) =>
     await this.ormRepo.findOneBy({ ...payload });
@@ -26,4 +27,4 @@ class OrderRepo implements IOrderRepo {
     await this.ormRepo.countBy({ ...payload });
 }
 
-export default new OrderRepo();
+export default new PurchaseRepo();

@@ -4,6 +4,7 @@ import MidiaRepository from "./Midia.repository";
 import ToolRepository from "./Tool.repository";
 import PurchaseRequestRepository from "./PurchaseRequest.repository";
 import OrderRepository from "./Order.repository";
+import PurchaseRepository from "./Purchase.repository";
 
 export {
   ElementRepository,
@@ -12,4 +13,5 @@ export {
   ToolRepository,
   PurchaseRequestRepository,
   OrderRepository,
+  PurchaseRepository,
 };
