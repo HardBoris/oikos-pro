@@ -56,6 +56,7 @@ class PurchaseOrderService {
     const orderUpdated = {
       ...order,
       invoice: req.body.invoice,
+      status: "Recebida",
     };
     await PurchaseOrderRepository.save(orderUpdated);
     return {
