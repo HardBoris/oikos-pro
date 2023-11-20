@@ -4,6 +4,7 @@ import MidiaService from "./Midia.service";
 import ToolService from "./Tool.service";
 import PurchaseRequestService from "./PurchaseRequest.service";
 import OrderService from "./Order.service";
+import PurchaseService from "./Purchase.service";
 
 export {
   ElementService,
@@ -12,4 +13,5 @@ export {
   ToolService,
   PurchaseRequestService,
   OrderService,
+  PurchaseService,
 };
