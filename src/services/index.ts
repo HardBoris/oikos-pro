@@ -6,6 +6,7 @@ import PurchaseRequestService from "./PurchaseRequest.service";
 import OrderService from "./Order.service";
 import PurchaseService from "./Purchase.service";
 import PurchaseOrderService from "./PurchaseOrder.service";
+import ServiceOrderService from "./ServiceOrder.service";
 
 export {
   ElementService,
@@ -16,4 +17,5 @@ export {
   OrderService,
   PurchaseService,
   PurchaseOrderService,
+  ServiceOrderService,
 };
