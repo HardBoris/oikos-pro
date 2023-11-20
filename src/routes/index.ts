@@ -5,6 +5,7 @@ import MidiaRouter from "./Midia.router";
 import ToolRouter from "./Tool.router";
 import PurchaseRequestRouter from "./PurchaseRequest.router";
 import OrderRouter from "./Order.router";
+import PurchaseRouter from "./Purchase.router";
 
 const registerRouters = (app: Express): void => {
   app.use(ElementRouter);
@@ -13,6 +14,7 @@ const registerRouters = (app: Express): void => {
   app.use(ToolRouter);
   app.use(PurchaseRequestRouter);
   app.use(OrderRouter);
+  app.use(PurchaseRouter);
 };
 
 export default registerRouters;
