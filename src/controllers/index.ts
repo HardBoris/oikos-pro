@@ -5,6 +5,7 @@ import ToolController from "./Tool.controller";
 import PurchaseRequestController from "./PurchaseRequest.controller";
 import OrderController from "./Order.controller";
 import PurchaseController from "./Purchase.controller";
+import PurchaseOrderController from "./PurchaseOrder.controller";
 
 export {
   ElementController,
@@ -14,4 +15,5 @@ export {
   PurchaseRequestController,
   OrderController,
   PurchaseController,
+  PurchaseOrderController,
 };
