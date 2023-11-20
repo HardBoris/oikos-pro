@@ -4,6 +4,7 @@ import MidiaController from "./Midia.controller";
 import ToolController from "./Tool.controller";
 import PurchaseRequestController from "./PurchaseRequest.controller";
 import OrderController from "./Order.controller";
+import PurchaseController from "./Purchase.controller";
 
 export {
   ElementController,
@@ -12,4 +13,5 @@ export {
   ToolController,
   PurchaseRequestController,
   OrderController,
+  PurchaseController,
 };
