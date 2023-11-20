@@ -49,6 +49,21 @@ class PurchaseOrderService {
     };
   };
 
+  InvoiceAdder = async (req: Request) => {
+    const order: PurchaseOrder = await PurchaseOrderRepository.findOne({
+      orderId: req.params.orderId,
+    });
+    const orderUpdated = {
+      ...order,
+      invoice: req.body.invoice,
+    };
+    await PurchaseOrderRepository.save(orderUpdated);
+    return {
+      status: 200,
+      order: orderUpdated,
+    };
+  };
+
   PurchaseOrderDeletor = async (req: Request) => {
     const order: PurchaseOrder = await PurchaseOrderRepository.findOne({
       orderId: req.params.orderId,

@@ -19,10 +19,16 @@ PurchaseOrderRouter.get(
   PurchaseOrderController.PurchaseOrderLoader
 );
 
-PurchaseOrderRouter.patch(
+/* PurchaseOrderRouter.patch(
   "/oikos-pro-api/orders/purchase-orders/:orderId",
   // "/oikos-pro-api/:companyId/orders/purchase-orders/:PurchaseOrderId",
   PurchaseOrderController.PurchaseOrderEditor
+); */
+
+PurchaseOrderRouter.patch(
+  "/oikos-pro-api/orders/purchase-orders/:orderId",
+  // "/oikos-pro-api/:companyId/orders/purchase-orders/:PurchaseOrderId",
+  PurchaseOrderController.InvoiceAdder
 );
 
 PurchaseOrderRouter.delete(

@@ -28,6 +28,11 @@ class PurchaseOrderController {
     return res.status(status).json(order);
   };
 
+  InvoiceAdder = async (req: Request, res: Response) => {
+    const { status, order } = await PurchaseOrderService.InvoiceAdder(req);
+    return res.status(status).json(order);
+  };
+
   PurchaseOrderDeletor = async (req: Request, res: Response) => {
     const { status, message } = await PurchaseOrderService.PurchaseOrderDeletor(
       req
