@@ -63,7 +63,7 @@ export class Order {
 }
 
 @ChildEntity()
-export class Purchase extends Order {
+export class PurchaseOrder extends Order {
   @Column({ type: "enum", enum: WayToPay })
   wayToPay: string;
 
@@ -75,7 +75,13 @@ export class Purchase extends Order {
 }
 
 @ChildEntity()
-export class Service extends Order {
+export class Purchase extends Order {
+  @Column()
+  invoice: string;
+}
+
+@ChildEntity()
+export class ServiceOrder extends Order {
   @Column()
   description: string;
 }
