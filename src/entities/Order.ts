@@ -4,11 +4,12 @@ import {
   CreateDateColumn,
   Entity,
   Index,
-  PrimaryColumn,
+  OneToMany,
   PrimaryGeneratedColumn,
   TableInheritance,
   UpdateDateColumn,
 } from "typeorm";
+import { PurchaseDetail } from "./Detail";
 
 export enum WayToPay {
   BILLED = "Faturado",
@@ -75,6 +76,11 @@ export class PurchaseOrder extends Order {
 
   @Column()
   invoice: string;
+
+  @OneToMany(() => PurchaseDetail, (detail) => detail.purchase, {
+    cascade: true,
+  })
+  details: PurchaseDetail[];
 }
 
 @ChildEntity()
