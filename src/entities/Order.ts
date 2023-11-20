@@ -72,10 +72,7 @@ export class PurchaseOrder extends Order {
 
   @Column({ type: "float", default: 0.0 })
   freight: number;
-}
 
-@ChildEntity()
-export class Purchase extends Order {
   @Column()
   invoice: string;
 }
