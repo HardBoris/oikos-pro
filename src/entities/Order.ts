@@ -36,7 +36,7 @@ export enum LogisticMode {
 
 @Entity("orders")
 @TableInheritance({ column: { type: "varchar", name: "type" } })
-@Index(["type", "order"], { unique: true })
+@Index(["type", "orderNumber"], { unique: true })
 export class Order {
   @PrimaryGeneratedColumn("uuid")
   orderId?: string;
@@ -48,7 +48,7 @@ export class Order {
   orderUpdateDate?: Date;
 
   @Column()
-  order: number;
+  orderNumber: number;
 
   @Column()
   partner: string;

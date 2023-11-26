@@ -13,22 +13,22 @@ OrderRouter.get(
   // "/oikos-pro-api/:companyId/orders",
   OrderController.OrdersLoader
 );
-OrderRouter.get(
+/* OrderRouter.get(
   "/oikos-pro-api/orders/:orderId",
   // "/oikos-pro-api/:companyId/orders/:OrderId",
   OrderController.OrderLoader
-);
+); */
 
-OrderRouter.patch(
+/* OrderRouter.patch(
   "/oikos-pro-api/orders/:orderId",
   // "/oikos-pro-api/:companyId/orders/:OrderId",
   OrderController.OrderEditor
-);
+); */
 
-OrderRouter.delete(
+/* OrderRouter.delete(
   "/oikos-pro-api/orders/:orderId",
   // "/oikos-pro-api/:companyId/orders/:OrderId",
   OrderController.OrderDeletor
-);
+); */
 
 export default OrderRouter;

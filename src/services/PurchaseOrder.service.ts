@@ -12,7 +12,7 @@ class PurchaseOrderService {
 
     const order: PurchaseOrder = await PurchaseOrderRepository.save({
       ...body,
-      order: cuenta + 1,
+      orderNumber: cuenta + 1,
     });
 
     return order;
@@ -40,7 +40,7 @@ class PurchaseOrderService {
     });
     const orderUpdated = {
       ...order,
-      order: req.body.order,
+      orderNumber: req.body.orderNumber,
     };
     await PurchaseOrderRepository.save(orderUpdated);
     return {
