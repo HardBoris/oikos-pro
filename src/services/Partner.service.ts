@@ -7,11 +7,11 @@ class PartnerService {
   PartnerCreator = async (req: Request): Promise<any> => {
     const body = req.body;
 
-    const cosa: Partner = await PartnerRepository.save({
+    const partner: Partner = await PartnerRepository.save({
       ...body,
     });
 
-    return cosa;
+    return partner;
   };
 
   PartnersLoader = async (req: Request) => {
