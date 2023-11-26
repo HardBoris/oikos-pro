@@ -7,6 +7,7 @@ import OrderService from "./Order.service";
 import PurchaseService from "./Purchase.service";
 import PurchaseOrderService from "./PurchaseOrder.service";
 import ServiceOrderService from "./ServiceOrder.service";
+import PartnerService from "./Partner.service";
 
 export {
   ElementService,
@@ -18,4 +19,5 @@ export {
   PurchaseService,
   PurchaseOrderService,
   ServiceOrderService,
+  PartnerService,
 };
