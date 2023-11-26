@@ -8,6 +8,7 @@ import OrderRouter from "./Order.router";
 import PurchaseRouter from "./Purchase.router";
 import PurchaseOrderRouter from "./PurchaseOrder.router";
 import ServiceOrderRouter from "./ServiceOrder.router";
+import PartnerRouter from "./Partner.router";
 
 const registerRouters = (app: Express): void => {
   app.use(ElementRouter);
@@ -19,6 +20,7 @@ const registerRouters = (app: Express): void => {
   app.use(PurchaseRouter);
   app.use(PurchaseOrderRouter);
   app.use(ServiceOrderRouter);
+  app.use(PartnerRouter);
 };
 
 export default registerRouters;
