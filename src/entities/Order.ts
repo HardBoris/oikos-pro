@@ -54,7 +54,7 @@ export class Order {
   orderNumber: number;
 
   @ManyToOne(() => Partner)
-  @JoinColumn({ referencedColumnName: "fantasyName" })
+  @JoinColumn({ name: "partnerId" })
   partner: Partner;
 
   @Column({ nullable: true, type: "enum", enum: LogisticMode })
