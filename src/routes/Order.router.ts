@@ -3,11 +3,11 @@ import { OrderController } from "../controllers";
 
 const OrderRouter = Router();
 
-OrderRouter.post(
+/* OrderRouter.post(
   "/oikos-pro-api/orders/register",
   // "/oikos-pro-api/:companyId/orders/register",
   OrderController.OrderCreator
-);
+); */
 OrderRouter.get(
   "/oikos-pro-api/orders",
   // "/oikos-pro-api/:companyId/orders",
