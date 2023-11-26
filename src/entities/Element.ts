@@ -23,8 +23,8 @@ export class Element {
   @Column()
   defaultUnit: string;
 
-  @Column()
-  partner: string;
+  /* @Column()
+  partner: string; */
 
   @Column({ default: 0 })
   minimumStock?: number;

@@ -4,12 +4,15 @@ import {
   CreateDateColumn,
   Entity,
   Index,
+  JoinColumn,
+  ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
   TableInheritance,
   UpdateDateColumn,
 } from "typeorm";
 import { PurchaseDetail } from "./Detail";
+import { Partner } from "./Partner";
 
 export enum WayToPay {
   BILLED = "Faturado",
@@ -50,8 +53,9 @@ export class Order {
   @Column()
   orderNumber: number;
 
-  @Column()
-  partner: string;
+  @ManyToOne(() => Partner)
+  @JoinColumn({ referencedColumnName: "fantasyName" })
+  partner: Partner;
 
   @Column({ nullable: true, type: "enum", enum: LogisticMode })
   logistic?: string;
