@@ -38,6 +38,13 @@ class DetailService {
     return { status: 200, Detail: Detail };
   };
 
+  PRDetailsLoader = async (req: Request) => {
+    const Detail: Detail = await DetailRepository.findOne({
+      DetailId: req.params.DetailId,
+    });
+    return { status: 200, Detail: Detail };
+  };
+
   DetailEditor = async (req: Request) => {
     const Detail: Detail = await DetailRepository.findOne({
       DetailId: req.params.DetailId,

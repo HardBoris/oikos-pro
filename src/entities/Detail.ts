@@ -27,7 +27,7 @@ export class Detail {
   @JoinColumn({ name: "prequest" })
   prequest: PurchaseRequest;
 
-  @ManyToOne(() => Element, (element) => element.details)
+  @ManyToOne(() => Element, (element) => element.details, { eager: true })
   @JoinColumn({ name: "element" })
   element: Element;
 }

@@ -14,6 +14,8 @@ export class PurchaseRequest {
   @CreateDateColumn()
   purchaseRequestDate?: Date;
 
-  @OneToMany(() => Detail, (detail) => detail.prequest, { cascade: true })
+  @OneToMany(() => Detail, (detail) => detail.prequest, {
+    cascade: true,
+  })
   details: Detail[];
 }
