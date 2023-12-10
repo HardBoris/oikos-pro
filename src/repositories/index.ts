@@ -8,6 +8,7 @@ import PurchaseRepository from "./Purchase.repository";
 import PurchaseOrderRepository from "./PurchaseOrder.repository";
 import ServiceOrderRepository from "./ServiceOrder.repository";
 import PartnerRepository from "./Partner.repository";
+import DetailRepository from "./Detail.repository";
 
 export {
   ElementRepository,
@@ -20,4 +21,5 @@ export {
   PurchaseOrderRepository,
   ServiceOrderRepository,
   PartnerRepository,
+  DetailRepository,
 };
