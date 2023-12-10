@@ -8,6 +8,7 @@ import PurchaseController from "./Purchase.controller";
 import PurchaseOrderController from "./PurchaseOrder.controller";
 import ServiceOrderController from "./ServiceOrder.controller";
 import PartnerController from "./Partner.controller";
+import DetailController from "./Detail.controller";
 
 export {
   ElementController,
@@ -20,4 +21,5 @@ export {
   PurchaseOrderController,
   ServiceOrderController,
   PartnerController,
+  DetailController,
 };
