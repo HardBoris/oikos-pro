@@ -13,6 +13,16 @@ OrderRouter.get(
   // "/oikos-pro-api/:companyId/orders",
   OrderController.OrdersLoader
 );
+
+OrderRouter.get(
+  "/oikos-pro-api/orders/status-list",
+  OrderController.StatusList
+);
+
+OrderRouter.get(
+  "/oikos-pro-api/orders/logistics-list",
+  OrderController.LogisticsList
+);
 /* OrderRouter.get(
   "/oikos-pro-api/orders/:orderId",
   // "/oikos-pro-api/:companyId/orders/:OrderId",

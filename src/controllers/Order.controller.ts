@@ -26,6 +26,21 @@ class OrderController {
     const { status, message } = await OrderService.OrderDeletor(req);
     return res.status(status).json(message);
   };
+
+  WaysList = (_: Request, res: Response) => {
+    const { status, waysList } = OrderService.WaysList();
+    return res.status(status).json(waysList);
+  };
+
+  StatusList = (_: Request, res: Response) => {
+    const { status, statusList } = OrderService.StatusList();
+    return res.status(status).json(statusList);
+  };
+
+  LogisticsList = (_: Request, res: Response) => {
+    const { status, logisticsList } = OrderService.LogisticsList();
+    return res.status(status).json(logisticsList);
+  };
 }
 
 export default new OrderController();

@@ -2,6 +2,7 @@ import { Request } from "express";
 import { Order } from "../entities";
 import { ErrorHandler } from "../errors";
 import { OrderRepository } from "../repositories";
+import { LogisticMode, OrderStatus, WayToPay } from "../entities/Order";
 
 class OrderService {
   OrderCreator = async (req: Request): Promise<any> => {
@@ -61,6 +62,27 @@ class OrderService {
     return {
       status: 200,
       message: "Order deleted",
+    };
+  };
+
+  WaysList = () => {
+    return {
+      status: 200,
+      waysList: Object.values(WayToPay),
+    };
+  };
+
+  StatusList = () => {
+    return {
+      status: 200,
+      statusList: Object.values(OrderStatus),
+    };
+  };
+
+  LogisticsList = () => {
+    return {
+      status: 200,
+      logisticsList: Object.values(LogisticMode),
     };
   };
 }

@@ -1,5 +1,5 @@
 import { Request } from "express";
-import { PurchaseOrder } from "../entities/Order";
+import { OrderStatus, PurchaseOrder } from "../entities/Order";
 import { ErrorHandler } from "../errors";
 import { PurchaseOrderRepository } from "../repositories";
 
