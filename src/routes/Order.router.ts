@@ -14,6 +14,8 @@ OrderRouter.get(
   OrderController.OrdersLoader
 );
 
+OrderRouter.get("/oikos-pro-api/orders/ways-list", OrderController.WaysList);
+
 OrderRouter.get(
   "/oikos-pro-api/orders/status-list",
   OrderController.StatusList
