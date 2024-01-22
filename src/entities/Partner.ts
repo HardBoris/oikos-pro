@@ -26,7 +26,7 @@ export class Partner {
   company: Company; */
 
   @OneToMany(() => Order, (order) => order.partner)
-  order: Order[];
+  orders: Order[];
 
   /* @ManyToMany(() => Element, (element) => element.partners)
   @JoinTable()
